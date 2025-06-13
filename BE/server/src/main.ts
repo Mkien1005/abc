@@ -10,7 +10,11 @@ async function bootstrap() {
     allowedHeaders: '*',
   });
 
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix('api',{
+    exclude: [
+      { path: '', method: RequestMethod.GET },
+    ],
+  });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
   await app.listen(3000);
