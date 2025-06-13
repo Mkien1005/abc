@@ -1,0 +1,278 @@
+.dashboard-root {
+  background: #f9fafc;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.info-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  border: none;
+  background: #fff;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.info-change {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.info-desc {
+  color: #6c757d;
+  font-weight: normal;
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.chart-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  border: none;
+  background: #fff;
+  min-height: 340px;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 18px;
+}
+
+.chart-sync {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  color: #b0b4c1;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.main-chart-placeholder {
+  height: 300px;
+  position: relative;
+  margin-top: 12px;
+}
+
+.main-donut-placeholder {
+  text-align: center;
+  min-height: 220px;
+  margin-top: 12px;
+}
+
+.traffic-source-list {
+  margin-top: 20px;
+}
+
+.traffic-source-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dot-blue {
+  background-color: #5C6AC4;
+}
+
+.dot-orange {
+  background-color: #FF9800;
+}
+
+.dot-green {
+  background-color: #4CAF50;
+}
+
+.percent {
+  margin-left: auto;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+@media (max-width: 991px) {
+  .chart-sync { right: 16px; top: 16px; }
+  .dashboard-root { padding: 16px 4px; }
+  .info-icon { margin-left: 8px; }
+}
+
+.dashboard-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card {
+  background: linear-gradient(45deg, #ffffff, #f8f9fa);
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stat-card .stat-title {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stat-card .stat-value {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  border-radius: 4px;
+}
+
+.table-modern {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-modern th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border: none;
+}
+
+.table-modern td {
+  vertical-align: middle;
+  border-color: #f1f3f5;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chart-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.filter-buttons .btn {
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+.filter-buttons .btn.active {
+  background-color: #321fdb;
+  color: white;
+  border-color: #321fdb;
+}
+
+.top-product-list {
+  margin-top: 18px;
+  background: #f7f8fa;
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+.top-product-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #23272e;
+  margin-bottom: 8px;
+}
+.top-product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #444;
+  padding: 4px 0;
+  border-bottom: 1px solid #ececec;
+}
+.top-product-item:last-child {
+  border-bottom: none;
+}
+.sold {
+  font-weight: 700;
+  color: #5C6AC4;
+  font-size: 1.05em;
+}
+
+/* Table styles */
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table td {
+  vertical-align: middle;
+  color: #6c757d;
+}
+
+.table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Chart customization */
+canvas {
+  max-width: 100%;
+} 

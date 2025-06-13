@@ -1,0 +1,129 @@
+.supplier-list-container {
+  padding: 20px;
+  background-color: var(--cui-bg-primary);
+}
+
+.supplier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.supplier-title {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: var(--cui-body-color);
+}
+
+.add-supplier-btn {
+  background-color: #321fdb !important;
+  color: white !important;
+}
+
+.add-supplier-btn:hover {
+  background-color: #1b2e4b !important;
+}
+
+.supplier-table {
+  background-color: var(--cui-card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.table-header {
+  background-color: var(--cui-table-header-bg);
+}
+
+.table-row {
+  transition: background-color 0.2s;
+}
+
+.table-row:hover {
+  background-color: var(--cui-table-hover-bg) !important;
+}
+
+.table-cell {
+  padding: 12px !important;
+  color: var(--cui-body-color) !important;
+}
+
+.table-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-button {
+  padding: 6px !important;
+}
+
+.action-button.edit-button {
+  color: #321fdb !important;
+}
+
+.action-button.edit-button:hover {
+  background-color: rgba(50, 31, 219, 0.1) !important;
+}
+
+.action-button.delete-button {
+  color: #e55353 !important;
+}
+
+.action-button.delete-button:hover {
+  background-color: rgba(229, 83, 83, 0.1) !important;
+}
+
+.dialog-content {
+  padding: 20px;
+}
+
+.dialog-title {
+  background-color: var(--cui-card-cap-bg);
+  color: var(--cui-body-color);
+}
+
+.dialog-actions {
+  padding: 16px;
+  background-color: var(--cui-card-cap-bg);
+}
+
+.text-field {
+  margin-bottom: 16px !important;
+}
+
+.text-field input {
+  color:  #322e58 !important;
+}
+
+.text-field label {
+  color: var(--cui-body-color) !important;
+}
+.text-field label.Mui-focused {
+  color: #322e58 !important; 
+}
+
+.text-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #322e58 !important; 
+}
+.dialog-actions button {
+  text-transform: none !important;
+}
+
+.dialog-actions button:last-child {
+  background-color: #322e58 !important;
+  color: white !important;
+}
+
+.dialog-actions button:last-child:hover {
+  background-color: #1b2e4b !important;
+}
+
+.dialog-actions button:first-child {
+  color: #768192 !important;
+}
+
+.dialog-actions button:first-child:hover {
+  background-color: rgba(118, 129, 146, 0.1) !important;
+} 

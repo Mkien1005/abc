@@ -1,0 +1,604 @@
+/*-- ========================================================
+
+Template Name: eTrade || Multipurpose eCommerce HTML5 Template
+Template URL: http://new.axilthemes.com/demo/template/etrade/
+Description: Modern and Multipurpose eCommerce HTML5 Template
+Version: 1.2.1
+Author: Axilthemes
+Author URL: https://www.axilthemes.com/
+Date Created: September 01, 2022
+
+======================================================== --*/
+
+/*-- ========================================================
+	
+STYLESHEET INDEXING
+|
+|___ Default Styles
+|	|
+|	|___ Variables
+|	|___ Reset Styels
+|	|___ Typography
+|	|___ Extend
+|	|___ Animations
+|	|___ Shortcode
+|	|___ Common Style 
+|	|___ Forms Styles 
+|
+|___Elements Styles
+|	|___ About Us
+|	|___ Back To Top
+|	|___ Breadcrumb Styles
+|	|___ Button Styles
+|	|___ Categories
+|	|___ Contact
+|	|___ Countdown
+|	|___ Error
+|	|___ Newsletter
+|	|___ Pagination
+|	|___ Poster
+|	|___ Price Slider
+|	|___ Privacy Policy
+|	|___ Section
+|	|___ Service
+|	|___ Slick Style
+|	|___ Slider Style
+|	|___ Social Share
+|	|___ Team Style
+|	|___ Testimonial Style
+|	|___ Video Style
+|
+|___Blocks Styles
+|	|___ Header Styles
+|	|___ Shop Styles
+|	|___ Blog Styles
+|	|___ Footer Styles
+|
+|
+|___ END STYLESHEET INDEXING
+
+======================================================== --*/
+
+/* ===============================
+Default Styles
+================================== */
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "default/variables";
+@import "default/mixins";
+@import "default/reset";
+@import "default/typography";
+@import "default/extend";
+@import "default/animations";
+@import "default/shortcode";
+@import "default/common";
+@import "default/forms";
+
+/* ===============================
+Elements Styles
+================================== */
+
+@import "elements/about";
+@import "elements/back-to-top";
+@import "elements/breadcrumb";
+@import "elements/button";
+@import "elements/categories";
+@import "elements/contact";
+@import "elements/countdown";
+@import "elements/error";
+@import "elements/newsletter";
+@import "elements/pagination";
+@import "elements/poster";
+@import "elements/price-slider";
+@import "elements/privacy-policy";
+@import "elements/section";
+@import "elements/service";
+@import "elements/slick";
+@import "elements/slider";
+@import "elements/social";
+@import "elements/team";
+@import "elements/testimonial";
+@import "elements/video";
+@import "elements/splash";
+
+/* ===============================
+Header Styles
+================================== */
+@import "header/header-top";
+@import "header/header";
+@import "header/nav";
+
+/* ===============================
+Shop Styles
+================================== */
+
+@import "shop/header-cart";
+@import "shop/shop";
+@import "shop/product-details";
+@import "shop/checkout";
+@import "shop/my-account";
+
+/* ===============================
+Blog Styles
+================================== */
+
+@import "blog/blog-list";
+@import "blog/blog-single";
+@import "blog/comment";
+@import "blog/sidebar";
+
+/* ===============================
+Footer Styles
+================================== */
+
+@import "footer/footer";
+
+/* ===============================
+Spacing
+================================== */
+@import "default/spacing";
+
+/* ===============================
+Dark Style
+================================== */
+
+/* ===============================
+RTL Style
+================================== */
+
+
+/* =========================== */
+
+
+
+/* ===============================
+Pre loader
+================================== */
+
+.preloader {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+body {
+    font-family: "Albert Sans", sans-serif;
+
+}
+
+.ctf-banner-page {
+    background: url(/images/banner/slide1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ctf-button {
+    background: #1335AB;
+    color: white;
+}
+
+.ctf-button:hover,
+.ctf-icon-arrow::before {
+    color: white
+}
+
+@media(min-width: 1440px) {
+    .header-style-4 .axil-header-top {
+        padding: 0px !important;
+    }
+}
+
+
+.axil-new-arrivals-product-area.fullwidth-container .slick-list {
+    overflow: hidden;
+}
+
+.axil-product .cart-action li.select-option button, .axil-product .cart-action li.select-option button:hover {
+    background-color: #1335AB !important;
+}
+
+.ctf-bg-image-banner {
+    background: url(/images/banner/banner-auth.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-categories-header {
+    background-color: #F57921;
+}
+
+/* ===============================
+Chat bot
+================================== */
+
+.chatbot-container {
+    position: fixed;
+    z-index: 1000000;
+    bottom: 20px;
+    right: 3%;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    width: 350px;
+    max-width: 90vw;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    max-height: 80vh;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .chatbot-container.closed {
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .chatbot-header {
+    background: linear-gradient(135deg, #3313e8ff, #5040ff);
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .chatbot-header span {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  
+  .chatbot-header button {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .chatbot-header button:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .chatbot-toggle {
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    right: 3%;
+    background: linear-gradient(135deg, #3313e8ff, #5040ff);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(51, 19, 232, 0.3);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+  
+  .ctf-header-chat {
+    position: fixed;
+    z-index: 999;
+    bottom: 90px;
+    background: linear-gradient(135deg, rgb(87, 60, 241), #5040ff);
+    right: 3.5%;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .chatbot-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(51, 19, 232, 0.4);
+  }
+  
+  .message-container {
+    flex: 1;
+    padding: 20px 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #f9fafc;
+    scrollbar-width: thin;
+    scrollbar-color: #d4d4d8 transparent;
+  }
+  
+  .message-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .message-container::-webkit-scrollbar-thumb {
+    background-color: #d4d4d8;
+    border-radius: 3px;
+  }
+  
+  .message {
+    position: relative;
+    padding: 12px 16px;
+    border-radius: 18px;
+    max-width: 85%;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-size: 14px;
+    animation: fadeIn 0.3s ease-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bot-message {
+    background: linear-gradient(135deg, #3313e8ff, #5040ff);
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    margin-right: auto;
+  }
+  
+  .bot-message::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #5040ff, #3313e8ff);
+    border-bottom-right-radius: 12px;
+    z-index: -1;
+  }
+  
+  .user-message {
+    background-color: white;
+    color: #333;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    margin-left: auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-message::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-bottom-left-radius: 12px;
+    z-index: -1;
+  }
+  
+  .message-time {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+    text-align: right;
+  }
+  
+  .user-message .message-time {
+    color: #9ca3af;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-top: 1px solid #edf2f7;
+    background-color: white;
+  }
+  
+  .input-container input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .input-container input:focus {
+    border-color: #3313e8ff;
+    box-shadow: 0 0 0 2px rgba(51, 19, 232, 0.1);
+  }
+  
+  .input-container button {
+    background: linear-gradient(135deg, #3313e8ff, #5040ff);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(51, 19, 232, 0.3);
+  }
+  
+  .input-container button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(51, 19, 232, 0.4);
+  }
+  
+  .input-container button:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  .loading {
+    padding: 8px 12px;
+    font-style: italic;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .typing-indicator {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #3313e8ff;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  
+  .typing-dot:nth-child(1) {
+    animation: typing 1s infinite 0s;
+  }
+  
+  .typing-dot:nth-child(2) {
+    animation: typing 1s infinite 0.2s;
+  }
+  
+  .typing-dot:nth-child(3) {
+    animation: typing 1s infinite 0.4s;
+  }
+  
+  @media (max-width: 768px) {
+    .chatbot-container {
+        width: 85vw;
+        height: 70vh;
+        bottom: 10px;
+        right: 10px;
+    }
+  
+    .chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+  
+    .message {
+        max-width: 90%;
+        font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .chatbot-container {
+        width: 95vw;
+        height: 80vh;
+        bottom: 5px;
+        right: 5px;
+        border-radius: 10px;
+    }
+  
+    .input-container input {
+        padding: 10px 12px;
+    }
+  
+    .input-container button {
+        width: 38px;
+        height: 38px;
+    }
+  }
+  
+  .ctf-product-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+    display: block;
+  }
+  
+  @media (min-width: 1023px) {
+    .ctf-product-contaner .thumbnail,
+    .product-style-one .thumbnail,
+    .product-style-seven {
+        width: 300px;
+        height: 300px;
+    }
+  
+    .ctf-product-contaner .thumbnail a,
+    .ctf-product-contaner .thumbnail img,
+    .product-style-one a,
+    .product-style-one img {
+        height: 100%;
+    }
+  }
+  
+  .message.bot-message a {
+    color: #ff0003;
+  }
+  
+  .message.bot-message a:hover {
+    color: #ffffff;
+  }
+  .button-group {
+    display: flex;
+    margin-left: 5px;
+  }
+  
+  .button-group button {
+    margin-left: 5px;
+  }
+  .bgr-slider {
+    background-color: white !important;
+  }
+  .signin-header .singin-header-btn p {
+    font-size: 16px !important;
+  }
+
+.chatbot-header p {
+  color: white !important;
+}
