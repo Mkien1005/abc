@@ -15,7 +15,7 @@ export class Brand {
   @Column()
   name: string;
 
-  @Column({default: ''})
+  @Column({ default: '', nullable: true })
   description: string;
 
   @OneToMany(() => Product, (product) => product.brand)

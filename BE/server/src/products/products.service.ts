@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
 import { Repository } from 'typeorm';
 import { Category } from './entities/category.entity';
-import { Brand } from './entities/brand.entity';
+import { Brand } from 'src/brand/entities/brand.entity';
 import {
   IPaginationOptions,
   paginate,
