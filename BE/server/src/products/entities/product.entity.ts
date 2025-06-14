@@ -8,11 +8,11 @@ import {
   UpdateDateColumn,
   JoinColumn,
 } from 'typeorm';
-import { Category } from './category.entity';
-import { Brand } from './brand.entity';
 import { CartDetail } from 'src/cart/entities/cart-detail.entity';
 import { OrderDetail } from 'src/order/entities/order-detail.entity';
 import { InventoryImport } from 'src/inventory/import.entity';
+import { Category } from 'src/category/entities/category.entity';
+import { Brand } from 'src/brand/entities/brand.entity';
 
 @Entity()
 export class Product {

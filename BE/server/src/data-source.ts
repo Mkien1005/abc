@@ -8,7 +8,7 @@ import { Category } from 'src/category/entities/category.entity';
 import { Order } from 'src/order/entities/order.entity';
 import { OrderDetail } from 'src/order/entities/order-detail.entity';
 import { CartDetail } from 'src/cart/entities/cart-detail.entity';
-import { Brand } from 'src/products/entities/brand.entity';
+import { Brand } from 'src/brand/entities/brand.entity';
 import { Supplier } from 'src/suppliers/entities/supplier.entity';
 import { InventoryImport } from 'src/inventory/import.entity';
 import { Notification } from 'src/notification/entities/notification.entity';
@@ -23,13 +23,13 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   entities: [
     User,
-    Cart,
-    Product,
-    Order,
-    OrderDetail,
+    Brand,
     Category,
     CartDetail,
-    Brand,
+    Cart,
+    Product,
+    OrderDetail,
+    Order,
     Supplier,
     InventoryImport,
     Notification,
