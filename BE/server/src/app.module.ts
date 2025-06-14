@@ -30,7 +30,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
         password: configService.get('DB_PASSWORD') || '',
         database: configService.get('DB_NAME') || 'pharmacy_manager',
         entities: ['dist/**/*.entity{.ts,.js}'],
-        synchronize: false, // tắt khi lên production
+        synchronize: true, // tắt khi lên production
         timezone: '+00:00',
       }),
       inject: [ConfigService],
