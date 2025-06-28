@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Product } from '../../products/entities/product.entity';
@@ -31,13 +35,16 @@ export class CartDetailService {
         `Giỏ hàng với ID ${createCartDetailDto.cartId} không tồn tại`,
       );
     }
-    const product = await this.productRepo.findOne({
+    const product: Product = await this.productRepo.findOne({
       where: { id: createCartDetailDto.productId },
     });
     if (!product) {
       throw new NotFoundException(
         `Sản phẩm với ID ${createCartDetailDto.productId} không tồn tại`,
       );
+    }
+    if (product.stock < createCartDetailDto.quantity) {
+      throw new BadRequestException(`Số lượng sản phẩm không đủ`);
     }
     const productExitInCart = await this.cartDetailRepo.findOne({
       where: { product: { id: product.id }, cart: { id: cart.id } },
