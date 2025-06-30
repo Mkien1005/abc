@@ -12,24 +12,31 @@ export class DashboardService {
   constructor(
     @InjectRepository(Order)
     private readonly orderRepository: Repository<Order>,
+
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
+
     @InjectRepository(OrderDetail)
     private readonly orderDetailRepository: Repository<OrderDetail>,
+
     @InjectRepository(Product)
     private readonly productRepository: Repository<Product>,
   ) {}
 
   private getDateRange() {
     const now = new Date();
+
     const currentMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
     const currentMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+    currentMonthEnd.setHours(23, 59, 59, 999);
+
     const previousMonthStart = new Date(
       now.getFullYear(),
       now.getMonth() - 1,
       1,
     );
     const previousMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
+    previousMonthEnd.setHours(23, 59, 59, 999);
 
     return {
       currentMonthStart,
@@ -139,7 +146,6 @@ export class DashboardService {
       currentMonthStart,
       currentMonthEnd,
     );
-
     return {
       totalOrders,
     };
@@ -166,14 +172,16 @@ export class DashboardService {
     const result = await this.orderRepository
       .createQueryBuilder('order')
       .select('SUM(order.totalAmount)', 'total')
-      .where('order.status = :status', { status: OrderStatus.CONFIRMED })
+      .where('order.status NOT IN (:...excludedStatuses)', {
+        excludedStatuses: [OrderStatus.PENDING, OrderStatus.CANCELLED],
+      })
       .andWhere('order.createdAt BETWEEN :startDate AND :endDate', {
         startDate,
         endDate,
       })
       .getRawOne();
 
-    return result?.total || 0;
+    return Number(result?.total) || 0;
   }
 
   private async getNewCustomers(
@@ -208,7 +216,9 @@ export class DashboardService {
       .addSelect('SUM(orderDetail.quantity)', 'totalQuantity')
       .innerJoin('orderDetail.product', 'product')
       .innerJoin('orderDetail.order', 'order')
-      .where('order.status = :status', { status: OrderStatus.CONFIRMED })
+      .where('order.status NOT IN (:...excludedStatuses)', {
+        excludedStatuses: [OrderStatus.PENDING, OrderStatus.CANCELLED],
+      })
       .andWhere('order.createdAt BETWEEN :startDate AND :endDate', {
         startDate,
         endDate,
@@ -228,6 +238,7 @@ export class DashboardService {
     for (let month = 0; month < 12; month++) {
       const startDate = new Date(currentYear, month, 1);
       const endDate = new Date(currentYear, month + 1, 0);
+      endDate.setHours(23, 59, 59, 999);
 
       const revenue = await this.calculateRevenue(startDate, endDate);
       stats.push(revenue);
@@ -244,7 +255,9 @@ export class DashboardService {
       .innerJoin('orderDetail.order', 'order')
       .select('category.name', 'type')
       .addSelect('COUNT(DISTINCT orderDetail.productId)', 'count')
-      .where('order.status = :status', { status: OrderStatus.CONFIRMED })
+      .where('order.status NOT IN (:...excludedStatuses)', {
+        excludedStatuses: [OrderStatus.PENDING, OrderStatus.CANCELLED],
+      })
       .groupBy('category.name')
       .getRawMany();
 
@@ -261,6 +274,7 @@ export class DashboardService {
     for (let month = 0; month < 12; month++) {
       const startDate = new Date(currentYear, month, 1);
       const endDate = new Date(currentYear, month + 1, 0);
+      endDate.setHours(23, 59, 59, 999);
 
       const count = await this.getNewCustomers(startDate, endDate);
       stats.push(count);
@@ -277,7 +291,9 @@ export class DashboardService {
       .addSelect('SUM(orderDetail.quantity * orderDetail.subtotal)', 'revenue')
       .innerJoin('orderDetail.product', 'product')
       .innerJoin('orderDetail.order', 'order')
-      .where('order.status = :status', { status: OrderStatus.CONFIRMED })
+      .where('order.status NOT IN (:...excludedStatuses)', {
+        excludedStatuses: [OrderStatus.PENDING, OrderStatus.CANCELLED],
+      })
       .groupBy('product.id')
       .orderBy('sales', 'DESC')
       .limit(5)
